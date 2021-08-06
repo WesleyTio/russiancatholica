@@ -1,0 +1,33 @@
+
+version: '3.0'
+
+services:
+  lumen-app:
+    build:  .
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/usr/share/nginx
+    networks:
+      - network_defalut
+
+  mysql-app:
+    image: mysql:5.7.22
+    ports:
+      - 3306:3306
+    volumes:
+      - .docker/dbdata:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: russian_catholica_db
+      MYSQL_ROOT_PASSWORD: secret
+
+    networks:
+      - network_defalut
+
+networks:
+  network_defalut:
+    driver: bridge
+
+
+
+
