@@ -15,8 +15,14 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->id();
+            $table->string('name')->nullable();
+            $table->string('date_init')->nullable();
+            $table->string('date_final')->nullable();
+            $table->unsignedBigInteger('group_id');
+            $table->unsignedBigInteger('image_id');
             $table->timestamps();
+            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('image_id')->references('id')->on('images');
         });
     }
 

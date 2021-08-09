@@ -17,10 +17,10 @@ class CreateCommunitysTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('history');
-            $table->unsignedBigInteger('users_id');
-            $table->unsignedBigInteger('areas_id');
-            $table->foreign('users_id')->references('id')->on('users');
-            $table->foreign('areas_id')->references('id')->on('areas');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('area_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('area_id')->references('id')->on('areas');
             $table->timestamps();
         });
     }

@@ -18,12 +18,12 @@ class CreateChurchesTable extends Migration
             $table->string('name')->nullable();
             $table->float('latitude');
             $table->float('longitude');
-            $table->unsignedBigInteger('holypersons_id');
-            $table->unsignedBigInteger('communitys_id');
-            $table->unsignedBigInteger('images_id');
-            $table->foreign('holypersons_id')->references('id')->on('holypersons');
-            $table->foreign('communitys_id')->references('id')->on('communitys');
-            $table->foreign('images_id')->references('id')->on('images');
+            $table->unsignedBigInteger('holyperson_id');
+            $table->unsignedBigInteger('community_id');
+            $table->unsignedBigInteger('image_id');
+            $table->foreign('holyperson_id')->references('id')->on('holypersons');
+            $table->foreign('community_id')->references('id')->on('communitys');
+            $table->foreign('image_id')->references('id')->on('images');
             $table->timestamps();
         });
     }

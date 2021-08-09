@@ -19,7 +19,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'name', 'email', 'ocupation_id'
     ];
 
     /**
@@ -30,4 +30,21 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+
+    public function ocupation(){
+
+        return $this->belongsTo(Ocupation::class);
+    }
+    
+    public function comnunity(){
+
+        return $this->hasOne(Community::class);
+    }
+
+    public function groups(){
+
+        return $this->hasMany(Group::class);
+
+    }
+
 }

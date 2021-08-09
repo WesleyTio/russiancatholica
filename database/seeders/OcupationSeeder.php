@@ -14,6 +14,18 @@ class OcupationSeeder extends Seeder
     public function run()
     {
         //
+        $ocupation1=[
+            'name' =>   'SuperAdmin'
+        ];
+        $ocupation1=[
+            'name' =>   'Admin'
+        ];
+        $ocupation1=[
+            'name' =>   'AdminCommunity'
+        ];
+        $ocupation1=[
+            'name' =>   'AdminGroup'
+        ];
 
     }
 }

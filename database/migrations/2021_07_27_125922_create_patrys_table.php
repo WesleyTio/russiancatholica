@@ -18,10 +18,10 @@ class CreatePatrysTable extends Migration
             $table->string('theme')->nullable();
             $table->string('date_init')->nullable();
             $table->string('date_final')->nullable();
-            $table->unsignedBigInteger('churches_id');
-            $table->unsignedBigInteger('images_id');
-            $table->foreign('churches_id')->references('id')->on('churches');
-            $table->foreign('images_id')->references('id')->on('images');
+            $table->unsignedBigInteger('church_id');
+            $table->unsignedBigInteger('image_id');
+            $table->foreign('church_id')->references('id')->on('churches');
+            $table->foreign('image_id')->references('id')->on('images');
             $table->timestamps();
         });
     }
