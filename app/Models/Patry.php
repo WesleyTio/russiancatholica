@@ -10,6 +10,8 @@ class Patry extends Model
     //
     use HasFactory;
 
+    protected $table = "patrys";
+
     protected $fillable = [
         'theme',
         'date_init',

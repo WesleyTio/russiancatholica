@@ -10,11 +10,14 @@ class Community extends Model
     //
     use HasFactory;
 
+
+    protected $table = "communitys";
+
     protected $fillable = [
         'name',
         'history',
-        'users_id',
-        'areas_id'
+        'user_id',
+        'area_id'
     ];
 
     public function user(){

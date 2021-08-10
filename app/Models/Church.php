@@ -10,13 +10,15 @@ class Church extends Model
     //
     use HasFactory;
 
+    protected $table = "churches";
+
     protected $fillable = [
         'name',
         'latitude',
         'longitude',
-        'holypersons_id',
-        'communitys_id',
-        'images_id'
+        'holyperson_id',
+        'community_id',
+        'image_id'
     ];
 
     public function holyperson(){
@@ -42,6 +44,6 @@ class Church extends Model
         return $this->hasMany(Patry::class);
 
     }
-    
+
 
 }

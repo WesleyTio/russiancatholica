@@ -10,11 +10,25 @@ class Event extends Model
     //
     use HasFactory;
 
+    protected $table = "events";
+
     protected $fillable = [
         'name',
         'date_init',
         'date_final',
-        'groups_id',
-        'images_id'
+        'group_id',
+        'image_id'
     ];
+
+    public function group(){
+
+        return $this->belongsTo(Group::class);
+
+    }
+
+    public function image(){
+
+        return $this->belongsTo(Image::class);
+
+    }
 }

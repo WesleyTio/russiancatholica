@@ -10,10 +10,13 @@ class Holyperson extends Model
     //
     use HasFactory;
 
+    protected $table = "holypersons";
+
     protected $fillable = [
         'name',
         'history',
-        'memorian_date'
+        'memorian_date',
+
     ];
 
     public function churches(){

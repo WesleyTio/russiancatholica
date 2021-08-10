@@ -10,12 +10,14 @@ class Group extends Model
     //
     use HasFactory;
 
+    protected $table = "groups";
+
     protected $fillable = [
         'name',
         'history',
         'link',
-        'users_id',
-        'images_id'
+        'user_id',
+        'image_id'
     ];
 
     public function user(){
@@ -23,9 +25,15 @@ class Group extends Model
         return $this->belongsTo(User::class);
 
     }
+
     public function image(){
 
         return $this->belongsTo(Image::class);
+
+    }
+    public function events(){
+
+        return $this->hasMany(Event::class);
 
     }
 }

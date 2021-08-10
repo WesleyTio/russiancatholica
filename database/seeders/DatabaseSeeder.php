@@ -19,8 +19,11 @@ class DatabaseSeeder extends Seeder
         $this->call(HolyPersonSeeder::class);
         $this->call(AreaSeeder::class);
         $this->call(CommunitySeeder::class);
-        $this->call(ChucheSeeder::class);
+        $this->call(ImageSeeder::class);
+        $this->call(ChurcheSeeder::class);
         $this->call(PatrySeeder::class);
+        $this->call(GroupSeeder::class);
+        $this->call(EventSeeder::class);
 
     }
 }
